@@ -15,6 +15,16 @@
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
 			<dataPath>Клиент</dataPath>
 			<field>Клиент</field>
 			<role>
@@ -25,21 +35,11 @@
 			<dataPath>Договор</dataPath>
 			<field>Договор</field>
 		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Сумма</dataPath>
-			<field>Сумма</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Сумма</v8:content>
-				</v8:item>
-			</title>
-		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ВКМ_ВыполненныеКлиентуРаботыОбороты.Период КАК Период,
 	ВКМ_ВыполненныеКлиентуРаботыОбороты.Клиент КАК Клиент,
-	ВКМ_ВыполненныеКлиентуРаботыОбороты.СуммаКОплатеПриход КАК Сумма
+	ВКМ_ВыполненныеКлиентуРаботыОбороты.СуммаКОплатеОборот КАК Сумма
 ИЗ
 	РегистрНакопления.ВКМ_ВыполненныеКлиентуРаботы.Обороты(, , День, ) КАК ВКМ_ВыполненныеКлиентуРаботыОбороты</query>
 	</dataSet>
@@ -193,8 +193,9 @@
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ТипДиаграммы.ШкалаТочек</dcscor:parameter>
 							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.2/data/chart" xsi:type="d8p1:ChartScale">
+								<d8p1:titleText xsi:type="v8:LocalStringType"/>
 								<d8p1:titleArea>
-									<d8p1:font kind="AutoFont"/>
+									<d8p1:font xsi:type="v8ui:Font" kind="AutoFont"/>
 									<d8p1:textColor>auto</d8p1:textColor>
 									<d8p1:backColor>auto</d8p1:backColor>
 									<d8p1:border width="1">
@@ -202,21 +203,26 @@
 									</d8p1:border>
 									<d8p1:borderColor>auto</d8p1:borderColor>
 								</d8p1:titleArea>
+								<d8p1:gridLineColor>auto</d8p1:gridLineColor>
+								<d8p1:labelFont xsi:type="v8ui:Font" kind="AutoFont"/>
+								<d8p1:labelColor>auto</d8p1:labelColor>
 								<d8p1:labelOrientation>CustomAngle</d8p1:labelOrientation>
+								<d8p1:labelFormat xsi:type="v8:LocalStringType"/>
+								<d8p1:scaleLineColor>auto</d8p1:scaleLineColor>
 								<d8p1:labelAngle>45</d8p1:labelAngle>
 							</dcscor:value>
 						</dcscor:item>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ТипДиаграммы.ШкалаЗначений</dcscor:parameter>
 							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.2/data/chart" xsi:type="d8p1:ChartScale">
-								<d8p1:titleText>
+								<d8p1:titleText xsi:type="v8:LocalStringType">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
 										<v8:content>Сумма</v8:content>
 									</v8:item>
 								</d8p1:titleText>
 								<d8p1:titleArea>
-									<d8p1:font kind="AutoFont"/>
+									<d8p1:font xsi:type="v8ui:Font" kind="AutoFont"/>
 									<d8p1:textColor>auto</d8p1:textColor>
 									<d8p1:backColor>auto</d8p1:backColor>
 									<d8p1:border width="1">
@@ -228,6 +234,11 @@
 								<d8p1:gridLine width="1" gap="false">
 									<v8ui:style xsi:type="v8ui:ChartLineType">None</v8ui:style>
 								</d8p1:gridLine>
+								<d8p1:gridLineColor>auto</d8p1:gridLineColor>
+								<d8p1:labelFont xsi:type="v8ui:Font" kind="AutoFont"/>
+								<d8p1:labelColor>auto</d8p1:labelColor>
+								<d8p1:labelFormat xsi:type="v8:LocalStringType"/>
+								<d8p1:scaleLineColor>auto</d8p1:scaleLineColor>
 							</dcscor:value>
 						</dcscor:item>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
@@ -307,8 +318,9 @@
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ТипДиаграммы.ШкалаТочек</dcscor:parameter>
 							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.2/data/chart" xsi:type="d8p1:ChartScale">
+								<d8p1:titleText xsi:type="v8:LocalStringType"/>
 								<d8p1:titleArea>
-									<d8p1:font kind="AutoFont"/>
+									<d8p1:font xsi:type="v8ui:Font" kind="AutoFont"/>
 									<d8p1:textColor>auto</d8p1:textColor>
 									<d8p1:backColor>auto</d8p1:backColor>
 									<d8p1:border width="1">
@@ -316,14 +328,20 @@
 									</d8p1:border>
 									<d8p1:borderColor>auto</d8p1:borderColor>
 								</d8p1:titleArea>
+								<d8p1:gridLineColor>auto</d8p1:gridLineColor>
+								<d8p1:labelFont xsi:type="v8ui:Font" kind="AutoFont"/>
+								<d8p1:labelColor>auto</d8p1:labelColor>
+								<d8p1:labelFormat xsi:type="v8:LocalStringType"/>
+								<d8p1:scaleLineColor>auto</d8p1:scaleLineColor>
 								<d8p1:maxLabelRows>1</d8p1:maxLabelRows>
 							</dcscor:value>
 						</dcscor:item>
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ТипДиаграммы.ШкалаЗначений</dcscor:parameter>
 							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.2/data/chart" xsi:type="d8p1:ChartScale">
+								<d8p1:titleText xsi:type="v8:LocalStringType"/>
 								<d8p1:titleArea>
-									<d8p1:font kind="AutoFont"/>
+									<d8p1:font xsi:type="v8ui:Font" kind="AutoFont"/>
 									<d8p1:textColor>auto</d8p1:textColor>
 									<d8p1:backColor>auto</d8p1:backColor>
 									<d8p1:border width="1">
@@ -335,6 +353,11 @@
 								<d8p1:gridLine width="1" gap="false">
 									<v8ui:style xsi:type="v8ui:ChartLineType">None</v8ui:style>
 								</d8p1:gridLine>
+								<d8p1:gridLineColor>auto</d8p1:gridLineColor>
+								<d8p1:labelFont xsi:type="v8ui:Font" kind="AutoFont"/>
+								<d8p1:labelColor>auto</d8p1:labelColor>
+								<d8p1:labelFormat xsi:type="v8:LocalStringType"/>
+								<d8p1:scaleLineColor>auto</d8p1:scaleLineColor>
 							</dcscor:value>
 						</dcscor:item>
 					</dcscor:item>

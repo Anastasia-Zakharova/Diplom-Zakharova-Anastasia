@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppress:SuppressGenericObject xmlns:suppress="http://g5.1c.ru/v8/dt/check/suppress/model" fqn="DataProcessor.ВКМ_МассовоеСозданиеАктов.Form.Форма.Form">
+  <containments fqn="commands:ПлюсГод_ПГ">
+    <suppressions key="com.e1c.v8codestyle.form:form-commands-single-action-handler" value="true"/>
+  </containments>
+</suppress:SuppressGenericObject>
